@@ -1,0 +1,21 @@
+language: java
+
+jdk:
+  - openjdk11
+
+services:
+  - postgresql
+
+cache:
+  directories:
+    - $HOME/.m2
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - a.a.chemezov@gmail.com
+    on_success: never
+    on_failure: always
